@@ -198,6 +198,7 @@ SELECT AVG(PC.speed)
 FROM PC
 JOIN Product ON PC.model = Product.model 
 WHERE maker = 'A';
+
 ===================================
 
 ===================================
@@ -426,64 +427,3 @@ PC.speed IN (SELECT MAX(speed) FROM PC
  	    AND PC.ram = (SELECT MIN(ram) FROM PC)
 
 ===================================
-
-Задание 26
-
-Найдите среднюю цену ПК и ПК-блокнотов, выпущенных производителем A (латинская буква).
-Вывести: одна общая средняя цена.
-
-
-Запрос:
-
-
-
-===================================
-Задание 27
-
-
-
-Запрос:
-
-===================================
-Задание 28
-
-
-
-Запрос:
-Select COUNT(PROD1.maker) AS qty
-FROM ( SELECT * FROM Product
-GROUP BY model
-HAVING COUNT(MODEL) = 1) AS PROD1
-
-
-SELECT COUNT(MODEL) AS qty 
-FROM Product
-GROUP BY MAKER
-HAVING COUNT(MODEL) = 1
-===================================
-Задание 29
-
-
-
-Запрос:
-===================================
-Задание 30
-
-
-
-Запрос:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
